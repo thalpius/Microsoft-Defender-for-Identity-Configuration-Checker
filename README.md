@@ -8,6 +8,8 @@ For more information, please check: https://docs.microsoft.com/en-us/defender-fo
 
 If the items on the dashboard look happy and not greyed-out, the item is configured correctly. If the item does not look happy and is greyed-out, use the menu on the left to see what is not configured corectly.
 
+Tip: Use the top panel to drag the window.
+
 # Screenshots
 
 Using the dashboard makes it easy to see if Microsoft Defender for Identity is configured correctly:
