@@ -4,7 +4,7 @@ Per request, I created a Microsoft Defender for Identity Configuration Checker, 
 
 For more information, please check: https://docs.microsoft.com/en-us/defender-for-identity/configure-windows-event-collection
 
-# Usage Microsoft GitHub Scanner
+# Usage Microsoft Defender for Identity Configuration Checker
 
 If the items on the dashboard look happy and not greyed-out, the item is configured correctly. If the item does not look happy and is greyed-out, use the menu on the left to see what is not configured corectly.
 
