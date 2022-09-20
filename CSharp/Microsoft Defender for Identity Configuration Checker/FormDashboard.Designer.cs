@@ -113,6 +113,10 @@
             this.pbEnableAuditingOnAnExchangeObject = new System.Windows.Forms.PictureBox();
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.btnRefreshExchangeAuditing = new System.Windows.Forms.Button();
+            this.pbDescendantGroupManagedServiceAccountObjects = new System.Windows.Forms.PictureBox();
+            this.pbDescendantManagedServiceAccountObjects = new System.Windows.Forms.PictureBox();
+            this.lblDescendantGroupManagedServiceAccountObjects = new System.Windows.Forms.Label();
+            this.lblDescendantManagedServiceAccountObjects = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlTop.SuspendLayout();
@@ -150,6 +154,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbEnableAuditingOnAnADFSObject)).BeginInit();
             this.pnlExchangeAuditing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnableAuditingOnAnExchangeObject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDescendantGroupManagedServiceAccountObjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDescendantManagedServiceAccountObjects)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -974,6 +980,10 @@
             // pnlObjectAuditing
             // 
             this.pnlObjectAuditing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlObjectAuditing.Controls.Add(this.lblDescendantManagedServiceAccountObjects);
+            this.pnlObjectAuditing.Controls.Add(this.lblDescendantGroupManagedServiceAccountObjects);
+            this.pnlObjectAuditing.Controls.Add(this.pbDescendantManagedServiceAccountObjects);
+            this.pnlObjectAuditing.Controls.Add(this.pbDescendantGroupManagedServiceAccountObjects);
             this.pnlObjectAuditing.Controls.Add(this.pbDescendantComputerObjects);
             this.pnlObjectAuditing.Controls.Add(this.pbDescendantGroupObjects);
             this.pnlObjectAuditing.Controls.Add(this.pbDescendantUserObjects);
@@ -1209,6 +1219,48 @@
             this.btnRefreshExchangeAuditing.UseVisualStyleBackColor = false;
             this.btnRefreshExchangeAuditing.Click += new System.EventHandler(this.btnRefreshExchangeAuditing_Click);
             // 
+            // pbDescendantGroupManagedServiceAccountObjects
+            // 
+            this.pbDescendantGroupManagedServiceAccountObjects.Image = global::Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Correct;
+            this.pbDescendantGroupManagedServiceAccountObjects.Location = new System.Drawing.Point(373, 145);
+            this.pbDescendantGroupManagedServiceAccountObjects.Name = "pbDescendantGroupManagedServiceAccountObjects";
+            this.pbDescendantGroupManagedServiceAccountObjects.Size = new System.Drawing.Size(30, 30);
+            this.pbDescendantGroupManagedServiceAccountObjects.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDescendantGroupManagedServiceAccountObjects.TabIndex = 24;
+            this.pbDescendantGroupManagedServiceAccountObjects.TabStop = false;
+            // 
+            // pbDescendantManagedServiceAccountObjects
+            // 
+            this.pbDescendantManagedServiceAccountObjects.Image = global::Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Correct;
+            this.pbDescendantManagedServiceAccountObjects.Location = new System.Drawing.Point(373, 181);
+            this.pbDescendantManagedServiceAccountObjects.Name = "pbDescendantManagedServiceAccountObjects";
+            this.pbDescendantManagedServiceAccountObjects.Size = new System.Drawing.Size(30, 30);
+            this.pbDescendantManagedServiceAccountObjects.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDescendantManagedServiceAccountObjects.TabIndex = 25;
+            this.pbDescendantManagedServiceAccountObjects.TabStop = false;
+            // 
+            // lblDescendantGroupManagedServiceAccountObjects
+            // 
+            this.lblDescendantGroupManagedServiceAccountObjects.AutoSize = true;
+            this.lblDescendantGroupManagedServiceAccountObjects.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescendantGroupManagedServiceAccountObjects.ForeColor = System.Drawing.Color.White;
+            this.lblDescendantGroupManagedServiceAccountObjects.Location = new System.Drawing.Point(409, 154);
+            this.lblDescendantGroupManagedServiceAccountObjects.Name = "lblDescendantGroupManagedServiceAccountObjects";
+            this.lblDescendantGroupManagedServiceAccountObjects.Size = new System.Drawing.Size(281, 13);
+            this.lblDescendantGroupManagedServiceAccountObjects.TabIndex = 26;
+            this.lblDescendantGroupManagedServiceAccountObjects.Text = "Descendant Group Managed Service Account Objects";
+            // 
+            // lblDescendantManagedServiceAccountObjects
+            // 
+            this.lblDescendantManagedServiceAccountObjects.AutoSize = true;
+            this.lblDescendantManagedServiceAccountObjects.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescendantManagedServiceAccountObjects.ForeColor = System.Drawing.Color.White;
+            this.lblDescendantManagedServiceAccountObjects.Location = new System.Drawing.Point(409, 190);
+            this.lblDescendantManagedServiceAccountObjects.Name = "lblDescendantManagedServiceAccountObjects";
+            this.lblDescendantManagedServiceAccountObjects.Size = new System.Drawing.Size(245, 13);
+            this.lblDescendantManagedServiceAccountObjects.TabIndex = 27;
+            this.lblDescendantManagedServiceAccountObjects.Text = "Descendant Managed Service Account Objects";
+            // 
             // FormDashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1217,13 +1269,13 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.pnlExchangeAuditing);
-            this.Controls.Add(this.pnlADFSAuditing);
-            this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlObjectAuditing);
             this.Controls.Add(this.pnlNTLMAuditing);
             this.Controls.Add(this.pnlAdvancedAuditing);
             this.Controls.Add(this.pnlLDAPAuditing);
+            this.Controls.Add(this.pnlExchangeAuditing);
+            this.Controls.Add(this.pnlADFSAuditing);
+            this.Controls.Add(this.pnlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDashboard";
@@ -1273,6 +1325,8 @@
             this.pnlExchangeAuditing.ResumeLayout(false);
             this.pnlExchangeAuditing.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnableAuditingOnAnExchangeObject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDescendantGroupManagedServiceAccountObjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDescendantManagedServiceAccountObjects)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1363,6 +1417,10 @@
         private System.Windows.Forms.Label lblEnableAuditingOnAnExchangeObject;
         private System.Windows.Forms.PictureBox pbEnableAuditingOnAnExchangeObject;
         private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.Label lblDescendantManagedServiceAccountObjects;
+        private System.Windows.Forms.Label lblDescendantGroupManagedServiceAccountObjects;
+        private System.Windows.Forms.PictureBox pbDescendantManagedServiceAccountObjects;
+        private System.Windows.Forms.PictureBox pbDescendantGroupManagedServiceAccountObjects;
     }
 }
 

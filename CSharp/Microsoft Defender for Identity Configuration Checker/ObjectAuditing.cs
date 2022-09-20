@@ -33,12 +33,12 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
                 },
                 new ObjectAudit
                 {
-                    GetObjectType = "",
+                    GetObjectType = "7b8b558a-93a5-4af7-adca-c017e67f1057",
                     Set = false
                 },
                 new ObjectAudit
                 {
-                    GetObjectType = "",
+                    GetObjectType = "ce206244-5827-4a86-ba1c-1c0c386c1b64",
                     Set = false
                 }
             };

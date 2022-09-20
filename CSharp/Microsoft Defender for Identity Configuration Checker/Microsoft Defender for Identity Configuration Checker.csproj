@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -53,7 +53,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>thalpius-final002-ICO.ico</ApplicationIcon>
+    <ApplicationIcon>thalpius.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -229,9 +229,8 @@
     <None Include="Resources\thalpius-final001.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="thalpius-final002-ICO.ico" />
-    <None Include="Resources\thalpius-final002.png" />
     <Content Include="thalpius.ico" />
+    <None Include="Resources\thalpius-final002.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

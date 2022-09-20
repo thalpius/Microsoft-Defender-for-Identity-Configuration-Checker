@@ -459,7 +459,7 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
         public void RefreshObjectAuditing()
         {
             List<ObjectAuditing.ObjectAudit> ObjectAuditing = CheckObjectAuditing();
-            if (ObjectAuditing[0].Set == true && ObjectAuditing[1].Set == true && ObjectAuditing[2].Set == true)
+            if (ObjectAuditing[0].Set == true && ObjectAuditing[1].Set == true && ObjectAuditing[2].Set == true && ObjectAuditing[3].Set == true && ObjectAuditing[4].Set == true)
             {
                 picBoxObjectAuditing.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Object_Auditing_512px;
             }
@@ -483,13 +483,29 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
             {
                 pbDescendantGroupObjects.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Wrong;
             }
-            if (ObjectAuditing[1].Set == true)
+            if (ObjectAuditing[2].Set == true)
             {
                 pbDescendantComputerObjects.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Correct;
             }
             else
             {
                 pbDescendantComputerObjects.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Wrong;
+            }
+            if (ObjectAuditing[3].Set == true)
+            {
+                pbDescendantGroupManagedServiceAccountObjects.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Correct;
+            }
+            else
+            {
+                pbDescendantGroupManagedServiceAccountObjects.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Wrong;
+            }
+            if (ObjectAuditing[4].Set == true)
+            {
+                pbDescendantManagedServiceAccountObjects.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Correct;
+            }
+            else
+            {
+                pbDescendantManagedServiceAccountObjects.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Wrong;
             }
         }
 
