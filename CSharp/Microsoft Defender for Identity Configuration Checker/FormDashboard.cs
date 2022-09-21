@@ -309,7 +309,7 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
         private void RefreshAdvancedAuditing()
         {
             List<AdvancedAuditing.Policy> PolicyAdvancedAuditing = CheckAdvancedAuditing();
-            if (PolicyAdvancedAuditing[0].Set == true && PolicyAdvancedAuditing[1].Set == true && PolicyAdvancedAuditing[2].Set == true && PolicyAdvancedAuditing[3].Set == true && PolicyAdvancedAuditing[4].Set == true && PolicyAdvancedAuditing[5].Set == true && PolicyAdvancedAuditing[6].Set == true)
+            if (PolicyAdvancedAuditing[0].Set == true && PolicyAdvancedAuditing[1].Set == true && PolicyAdvancedAuditing[2].Set == true && PolicyAdvancedAuditing[3].Set == true && PolicyAdvancedAuditing[4].Set == true && PolicyAdvancedAuditing[5].Set == true && PolicyAdvancedAuditing[6].Set == true && PolicyAdvancedAuditing[7].Set == true)
             {
                 picBoxAdvancedAuditing.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.LDAP_Auditing_512px;
             }
@@ -372,6 +372,14 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
             else
             {
                 pbAuditSecuritySystemExtension.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Wrong;
+            }
+            if (PolicyAdvancedAuditing[7].Set == true)
+            {
+                pbAuditDirectoryServiceChanges.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Correct;
+            }
+            else
+            {
+                pbAuditDirectoryServiceChanges.Image = Microsoft_Defender_for_Identity_Configuration_Checker.Properties.Resources.Wrong;
             }
         }
 

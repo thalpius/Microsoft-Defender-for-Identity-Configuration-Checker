@@ -79,6 +79,12 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
                     Value = 3,
                     Set = false
                 },
+                new Policy
+                {
+                    Guid = Guid.Parse("0cce923c-69ae-11d9-bed3-505054503030"),
+                    Value = 3,
+                    Set = false
+                }
             };
 
             AUDIT_POLICY_INFORMATION auditPolicyInformation = new AUDIT_POLICY_INFORMATION();
