@@ -18,4 +18,4 @@ Using the dashboard makes it easy to see if Microsoft Defender for Identity is c
 
 Here is a bird-eye view of the Advanced Auditing as an example:
 
-![Alt text](/Screenshots/MicrosoftDefenderForIdentityConfigurationChecker02.png?raw=true "Microsoft Defender for Identity Configuration Checker Advanced Auditing")
+![Alt text](/Screenshots/MicrosoftDefenderForIdentityConfigurationChecker02_new.png?raw=true "Microsoft Defender for Identity Configuration Checker Advanced Auditing")
