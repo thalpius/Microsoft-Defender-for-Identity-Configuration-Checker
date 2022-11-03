@@ -293,9 +293,9 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap thalpius_final002 {
+        internal static System.Drawing.Bitmap thalpius_2022_01 {
             get {
-                object obj = ResourceManager.GetObject("thalpius-final002", resourceCulture);
+                object obj = ResourceManager.GetObject("thalpius-2022-01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

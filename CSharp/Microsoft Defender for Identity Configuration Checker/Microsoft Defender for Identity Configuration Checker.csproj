@@ -229,6 +229,7 @@
     <None Include="Resources\thalpius-final001.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\thalpius-2022-01.png" />
     <Content Include="thalpius.ico" />
     <None Include="Resources\thalpius-final002.png" />
   </ItemGroup>
