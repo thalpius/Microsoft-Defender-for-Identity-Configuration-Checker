@@ -45,13 +45,13 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
                 },
                 new Policy
                 {
-                    Guid = Guid.Parse("0cce9236-69ae-11d9-bed3-505054503030"),
+                    Guid = Guid.Parse("0cce9238-69ae-11d9-bed3-505054503030"),
                     Value = 3,
                     Set = false
                 },
                 new Policy
                 {
-                    Guid = Guid.Parse("0cce9238-69ae-11d9-bed3-505054503030"),
+                    Guid = Guid.Parse("0cce9236-69ae-11d9-bed3-505054503030"),
                     Value = 3,
                     Set = false
                 },
