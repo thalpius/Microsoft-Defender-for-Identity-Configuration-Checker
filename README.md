@@ -1,6 +1,6 @@
 # Microsoft Defender for Identity Configuration Checker
 
-Per request, I created a Microsoft Defender for Identity Configuration Checker, which includes a Graphical User Interface. I can not make it simpler than this to check the Microsoft Defender for Identity configuration. Simply run the tool and check the dashboard to ensure everything is configured correctly. The buttons in the menu give a more granular view of the configuration per item.
+Per request, I created a Microsoft Defender for Identity Configuration Checker, which includes a Graphical User Interface. I can not make it simpler than this to check the Microsoft Defender for Identity configuration. Simply run the tool with administrator privileges on each domain controller and check the dashboard to ensure everything is configured correctly. The buttons in the menu give a more granular view of the configuration per item.
 
 For more information, please check: https://docs.microsoft.com/en-us/defender-for-identity/configure-windows-event-collection
 
