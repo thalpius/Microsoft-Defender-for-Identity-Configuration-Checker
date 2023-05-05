@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Security.Principal;
+using System.Windows.Forms;
 
 namespace Microsoft_Defender_for_Identity_Configuration_Checker
 {
@@ -15,6 +16,8 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
 
         public static List<ObjectAudit> CheckObjectAuditing()
         {
+            int objectVersionint;
+
             List<ObjectAudit> ObjectAuditing = new List<ObjectAudit> {
                 new ObjectAudit
                 {
@@ -47,6 +50,14 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
             {
                 try
                 {
+                    DirectoryEntry RootDirEntrySchema = new DirectoryEntry("LDAP://RootDSE");
+                    Object distinguishedNameSchema = RootDirEntrySchema.Properties["schemaNamingContext"].Value;
+
+                    using (DirectoryEntry de = new DirectoryEntry(@"LDAP://" + distinguishedNameSchema))
+                    {
+                        objectVersionint = (int)de.Properties["objectVersion"].Value;
+                    }
+
                     DirectoryEntry RootDirEntry = new DirectoryEntry("LDAP://RootDSE");
                     Object distinguishedName = RootDirEntry.Properties["defaultNamingContext"].Value;
 
@@ -61,12 +72,26 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
                             if (GetIdentity == "Everyone")
                             {
                                 string GetAuditAccess = ar.ActiveDirectoryRights.ToString();
-                                if (GetAuditAccess.Contains("CreateChild") && GetAuditAccess.Contains("DeleteChild") && GetAuditAccess.Contains("Self") && GetAuditAccess.Contains("WriteProperty") && GetAuditAccess.Contains("DeleteTree") && GetAuditAccess.Contains("ExtendedRight") && GetAuditAccess.Contains("Delete") && GetAuditAccess.Contains("WriteDacl") && GetAuditAccess.Contains("WriteOwner"))
+                                if (objectVersionint >= 88)
                                 {
-                                    string GetObjectType = ar.InheritedObjectType.ToString();
-                                    if (GetObjectType.Equals(ObjectAuditing[index].GetObjectType))
+                                    if (GetAuditAccess.Contains("CreateChild") && GetAuditAccess.Contains("DeleteChild") && GetAuditAccess.Contains("Self") && GetAuditAccess.Contains("WriteProperty") && GetAuditAccess.Contains("DeleteTree") && GetAuditAccess.Contains("ExtendedRight") && GetAuditAccess.Contains("Delete") && GetAuditAccess.Contains("WriteDacl") && GetAuditAccess.Contains("WriteOwner"))
                                     {
-                                        ObjectAuditing[index].Set = true;
+                                        string GetObjectType = ar.InheritedObjectType.ToString();
+                                        if (GetObjectType.Equals(ObjectAuditing[index].GetObjectType))
+                                        {
+                                            ObjectAuditing[index].Set = true;
+                                        }
+                                    }
+                                }
+                                if (objectVersionint < 88)
+                                {
+                                    if (GetAuditAccess.Contains("CreateChild") && GetAuditAccess.Contains("DeleteChild") && GetAuditAccess.Contains("Self") && GetAuditAccess.Contains("WriteProperty") && GetAuditAccess.Contains("DeleteTree") && GetAuditAccess.Contains("Delete") && GetAuditAccess.Contains("WriteDacl") && GetAuditAccess.Contains("WriteOwner"))
+                                    {
+                                        string GetObjectType = ar.InheritedObjectType.ToString();
+                                        if (GetObjectType.Equals(ObjectAuditing[index].GetObjectType))
+                                        {
+                                            ObjectAuditing[index].Set = true;
+                                        }
                                     }
                                 }
                             }
