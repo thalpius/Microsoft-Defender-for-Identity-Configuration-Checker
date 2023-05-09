@@ -20,43 +20,49 @@ namespace Microsoft_Defender_for_Identity_Configuration_Checker
                 {
                     Key = "SYSTEM\\CurrentControlSet\\Services\\NTDS\\Diagnostics",
                     Subkey = "15 Field Engineering",
-                    Value = 5,
+                    Value = 0,
                     Set = false
                 },
                 new RegKey
                 {
                     Key = "SYSTEM\\CurrentControlSet\\Services\\NTDS\\Parameters",
                     Subkey = "Expensive Search Results Threshold",
-                    Value = 1,
                     Set = false
                 },
                 new RegKey
                 {
                     Key = "SYSTEM\\CurrentControlSet\\Services\\NTDS\\Parameters",
                     Subkey = "Inefficient Search Results Threshold",
-                    Value = 1,
                     Set = false
                 },
                 new RegKey
                 {
                     Key = "SYSTEM\\CurrentControlSet\\Services\\NTDS\\Parameters",
                     Subkey = "Search Time Threshold (msecs)",
-                    Value = 1,
                     Set = false
                 }
             };
 
-            for (int index = 0; index < RegkeysLDAPAuditing.Count; index++)
+            using (RegistryKey keyDiagnostics = Registry.LocalMachine.OpenSubKey(RegkeysLDAPAuditing[0].Key, false))
+            {
+                Object CheckNTLMAuditing = keyDiagnostics.GetValue(RegkeysLDAPAuditing[0].Subkey);
+                if (CheckNTLMAuditing != null)
+                {
+                    if (Int32.Parse(CheckNTLMAuditing.ToString()) == RegkeysLDAPAuditing[0].Value)
+                    {
+                        RegkeysLDAPAuditing[0].Set = true;
+                    }
+                }
+            }
+
+            for (int index = 1; index < RegkeysLDAPAuditing.Count; index++)
             {
                 using (RegistryKey keyDiagnostics = Registry.LocalMachine.OpenSubKey(RegkeysLDAPAuditing[index].Key, false))
                 {
                     Object CheckNTLMAuditing = keyDiagnostics.GetValue(RegkeysLDAPAuditing[index].Subkey);
-                    if (CheckNTLMAuditing != null)
+                    if (CheckNTLMAuditing == null)
                     {
-                        if (Int32.Parse(CheckNTLMAuditing.ToString()) == RegkeysLDAPAuditing[index].Value)
-                        {
-                            RegkeysLDAPAuditing[index].Set = true;
-                        }
+                        RegkeysLDAPAuditing[index].Set = true;
                     }
                 }
             }

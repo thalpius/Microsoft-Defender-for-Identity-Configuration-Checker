@@ -143,10 +143,10 @@
 </value>
   </data>
   <data name="richTextBox2.Text" xml:space="preserve">
-    <value>Microsoft Defender for Identity can monitor additional LDAP queries in your network. These LDAP activities are sent over the Active Directory Web Service protocol and act like normal LDAP queries. To have visibility into these activities, you need to enable event 1644 on your domain controllers.
+    <value>Since the release of the sensor version 2.201, logging for events 1644 is not required anymore, and the registry keys can be removed. If the registry can not be found, the checkboxes are green. If the registry keys still exists and the checkboxes are red, remove the registry keys if they are only used for Microsoft Defender for Identity.
 
 For more information see:
-https://docs.microsoft.com/en-us/defender-for-identity/configure-windows-event-collection#event-id-1644</value>
+https://learn.microsoft.com/en-us/defender-for-identity/configure-windows-event-collection#event-id-1644</value>
   </data>
   <data name="richTextBoxAdvancedAuditing.Text" xml:space="preserve">
     <value>Modifying the Advanced Audit Policies triggers the following Event IDs:
